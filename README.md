@@ -15,7 +15,7 @@ This software is designed for academic research use in flow chemistry, reaction 
 ## 2. System Requirements
 
 ### Operating System & Environment
-* **Operating System:** Windows 10 (64-bit)
+* **Operating System:** Windows 10, Windows 11 (64-bit)
 * **Python Version:** 3.10
 * **Required Python Packages:** 
     * `matplotlib`
@@ -28,7 +28,7 @@ This software is designed for academic research use in flow chemistry, reaction 
     
 
 ### Tested Configurations
-* The software has been tested on **Windows 10 (64-bit)** with **Python 3.10**.
+* The software has been tested on **Windows 10, Windows 11 (64-bit)** with **Python 3.10**.
 
 ### Non-standard Hardware
 * The software is specifically designed to control laboratory automation hardware. For detailed hardware specifications and setup, please refer to **Supplementary Information Section 6**.
