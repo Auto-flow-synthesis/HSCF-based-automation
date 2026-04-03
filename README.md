@@ -86,7 +86,7 @@ This software is designed for academic research use in flow chemistry, reaction 
     ```
 4.  **Initialization:** Click **Initialize** to establish communication with all hardware.
 5.  **Execution:** After successful initialization, click **Start** to begin the automated synthesis process.
-
+6.  **Additional Guidance:** Detailed examples and explanations of code usage are provided in Section 7 and Section 8 of the Supporting Information.
 ---
 
 ## 6. License
