@@ -11,43 +11,48 @@ The software provides a graphical user interface (GUI) for:
 This software is designed for academic research use in flow chemistry, reaction automation, and self-driving laboratory systems.
 
 ---
-
 ## 2. System Requirements
 
 ### Operating System & Environment
-* **Operating System:** Windows 10, Windows 11 (64-bit)
-* **Python Version:** 3.10
-* **Required Python Packages:** 
-    * `matplotlib`
-    * `mttkinter`
-    * `numpy`
-    * `pandas`
-    * `pandastable`
-    * `pyserial`
-    * `pyvisa`
-    
+* **Operating System:** Windows 11 22H2 (64-bit; build 22621)
+* **Python Version:** 3.8.6 (64-bit)
+* **Python Dependencies:** The complete list of 29 installed packages and their exact versions is provided in [requirements.txt](requirements.txt).
 
-### Tested Configurations
-* The software has been tested on **Windows 10, Windows 11 (64-bit)** with **Python 3.10**.
+### Main Python Packages
+
+| Package | Version |
+| --- | --- |
+| `matplotlib` | `3.7.5` |
+| `mttkinter` | `0.6.1` |
+| `numpy` | `1.24.4` |
+| `pandas` | `2.0.3` |
+| `pandastable` | `0.13.1` |
+| `pyserial` | `3.5` |
+| `PyVISA` | `1.14.1` |
+| `requests` | `2.32.3` |
+| `urllib3` | `2.2.2` |
 
 ### Non-standard Hardware
 * The software is specifically designed to control laboratory automation hardware. For detailed hardware specifications and setup, please refer to **Supplementary Information Section 6**.
+* Detailed descriptions of the device-control functions, parameter definitions, and GUI operation are provided in **Supplementary Section 7, Table S19, and Figs. S66–S67**. The device-specific COM port assignments and rotary-evaporator network addresses are listed in **Table S21** for brexpiprazole, **Table S24** for esonarimod, and **Table S28** for benzoxazinone derivatives.
 
 ---
 
 ## 3. Installation Guide
 
 ### Instructions
-1.  **Install Python:** Ensure Python 3.10 (64-bit) is installed on your system.
+1.  **Install Python:** Ensure Python 3.8.6 (64-bit) is installed and selected in your terminal.
 2.  **Download Repository:** Download this repository and extract the files to a local folder.
-3.  **Install Dependencies:** Run the following command to install the required packages:
-    ```bash
-    pip install mttkinter pyserial numpy pandas matplotlib
+3.  **Install Dependencies:** Open a terminal in the repository folder and run the following command to install the recorded package versions:
+    ```powershell
+    python -m pip install -r requirements.txt
     ```
 4.  **Hardware Connection:** Connect all laboratory hardware devices to your computer.
-5.  **COM Port Configuration:** * Open **Windows Device Manager**.
+5.  **COM Port Configuration:**
+    * Open **Windows Device Manager**.
     * Identify and note the assigned COM port numbers (e.g., `COM1`, `COM2`) for each device.
-    * Configure these COM port numbers in the software GUI or the corresponding Python configuration file.
+    * Configure these COM port numbers in the workflow editor or in `autoprog_init()` of the selected synthesis script.
+6.  **Rotary Evaporator Configuration:** Set `self.BASE_URL` in `rotaVapFn.py` to the network address of the connected instrument. Configure the instrument-specific username and password using the Windows user environment variables `HSCF_ROTAVAP_USERNAME` and `HSCF_ROTAVAP_PASSWORD`. Restart the terminal after setting these variables so that the program can read them.
 
 ### Typical Install Time
 * Approximately **10 minutes** on a standard desktop computer with an existing Python installation.
@@ -68,7 +73,7 @@ This software is designed for academic research use in flow chemistry, reaction 
 
 ### Expected Output
 * The GUI confirms the valve is successfully connected and initialized.
-* After **1 minute**, the valve physically switches from **Channel 1** (initial position) to **Channel 2**.
+* After **1 minute**, the script sends a command selecting valve **position 2** and then closes the connection. Confirm the physical valve position; the script does not set an initial position of 1.
 
 ### Expected Run Time
 * Approximately **1–2 minutes**.
@@ -86,7 +91,7 @@ This software is designed for academic research use in flow chemistry, reaction 
     ```
 4.  **Initialization:** Click **Initialize** to establish communication with all hardware.
 5.  **Execution:** After successful initialization, click **Start** to begin the automated synthesis process.
-6.  **Additional Guidance:** Detailed examples and explanations of code usage are provided in Section 7 and Section 8 of the Supporting Information.
+
 ---
 
 ## 6. License
