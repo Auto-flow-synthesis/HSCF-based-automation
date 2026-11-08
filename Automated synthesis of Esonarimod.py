@@ -592,6 +592,11 @@ lbl_16.pack()
 lbl_17 = tk.Label(fr_cmdInt, width = 75, text = 'second_step_reaction', anchor = 'w', justify = tk.LEFT)
 lbl_17.pack()
 #endlabel
+# Retained GUI timeline metadata (minutes), read by AutoProgram-GUI.py.
+# Used by the GUI editor for workflow visualization.
+# This block may contain legacy or placeholder values after manual workflow edits.
+# It does not control hardware operations or execution timing.
+# Actual delays are defined in the workflow and device-control function calls.
 #timeline
 0
 #endtimeline

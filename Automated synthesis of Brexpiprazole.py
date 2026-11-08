@@ -645,6 +645,11 @@ lbl_134.pack()
 lbl_135 = tk.Label(fr_cmdInt, width = 75, text = 'After 5.00 min, Watson Marlow 1 direction RL pumps at 1.0 RPM, total time usage 3051.06', anchor = 'w', justify = tk.LEFT)
 lbl_135.pack()
 #endlabel
+# Retained GUI timeline metadata (minutes), read by AutoProgram-GUI.py.
+# Used by the GUI editor for workflow visualization.
+# This block may contain legacy or placeholder values after manual workflow edits.
+# It does not control hardware operations or execution timing.
+# Actual delays are defined in the workflow and device-control function calls.
 #timeline
 0
 0

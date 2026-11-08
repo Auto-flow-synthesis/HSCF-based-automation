@@ -12,15 +12,15 @@ class rotaVapFn:
     # urllib3.disable_warnings()
     def __init__(self):
         self.BASE_URL = "https://169.254.73.96/api/v1"
-        self.USERNAME = "rw"
-        self.PASSWORD = "ckUNAUNN"
+        self.USERNAME = os.environ["HSCF_ROTAVAP_USERNAME"]
+        self.PASSWORD = os.environ["HSCF_ROTAVAP_PASSWORD"]
         self.auth = (self.USERNAME, self.PASSWORD)
         self.session = requests.Session()
         self.rootcert = 'path/to/root.crt'
         self.info_endpoint = self.BASE_URL + "/info"
 
         # Set username and password
-        self.session.auth = ('rw', 'ckUNAUNN')
+        self.session.auth = (self.USERNAME, self.PASSWORD)
         
         # Disable the certificate
         if os.path.isfile(self.rootcert):
